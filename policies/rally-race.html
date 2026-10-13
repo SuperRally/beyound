@@ -149,29 +149,35 @@
             <tr><td>Final Financial Fitness</td><td>30%</td></tr>
           </tbody>
         </table>
-        <p><strong>6.3</strong> Engagement Multipliers shall be cumulative. Each eligible activity shall add its applicable percentage to the base multiplier of 100%.</p>
+        <p><strong>6.3</strong> Engagement Multipliers shall apply independently. For each qualifying activity, a multiplier factor shall be calculated as 1 + (Freq × Engagement Multiplier), and the multiplier factors for all qualifying activities shall be multiplied together.</p>
         <p><strong>6.4</strong> Only qualifying referrals and activities satisfying the applicable eligibility criteria shall be considered when calculating the total Engagement Multiplier.</p>
-        <p><strong>6.5</strong> The total applicable Engagement Multiplier shall be the sum of all qualifying multipliers earned by the user during the Campaign Period.</p>
+        <p><strong>6.5</strong> The total applicable Engagement Multiplier shall be the product of the multiplier factors for all qualifying activities completed by the user during the Campaign Period.</p>
 
         <h2>7. Final Score and Leaderboard Ranking</h2>
         <p><strong>7.1</strong> The Final Score of each Eligible User shall be calculated by applying the total applicable Engagement Multipliers to the Base Points.</p>
-        <p><strong>Final Score = Base Points × (1 + Total Applicable Engagement Multipliers)</strong></p>
-        <p>The Engagement Multipliers shall be expressed as percentages in the calculation.</p>
+        <p><strong>Final Score = Base Points × ∏(1 + Freq × Engagement Multiplier)</strong></p>
+        <p>Where &ldquo;Freq&rdquo; means the number of times the user has completed a qualifying activity during the Campaign Period, &ldquo;Engagement Multiplier&rdquo; means the multiplier applicable to that activity under Clause 6.2, and &ldquo;∏&rdquo; means the product of the multiplier factors across all qualifying activities. The Engagement Multipliers shall be expressed as percentages in the calculation.</p>
         <h3>7.2 Illustrative Example</h3>
         <p>Assume a user has:</p>
         <ul>
           <li>Eligible Bill Payment Volume: ₹40,000;</li>
           <li>Wallet payments/Rally Passes value: ₹10,00,000;</li>
-          <li>Two qualifying referrals: 20% in total;</li>
-          <li>DFA Initialization: 20%; and</li>
-          <li>Waitlist Financial Fitness: 20%.</li>
+          <li>DFA Initialization: 1 time (20%);</li>
+          <li>Class Upgrade Initialization: 1 time (20%); and</li>
+          <li>Qualifying referrals: 4 (10% each).</li>
         </ul>
         <p>The calculation shall be:</p>
         <ol type="a">
           <li>Eligible Volume = ₹40,000 + ₹10,00,000 = ₹10,40,000.</li>
           <li>Base Points = ₹10,40,000 ÷ ₹1,000 = 1,040 points.</li>
-          <li>Total applicable Engagement Multiplier = 20% + 20% + 20% = 60%.</li>
-          <li>Final Score = 1,040 × (1 + 0.60) = <strong>1,664 points</strong>.</li>
+          <li>Applicable Engagement Multipliers:
+            <ul>
+              <li>DFA Initialization: 1 + (1 × 20%) = 1.20;</li>
+              <li>Class Upgrade Initialization: 1 + (1 × 20%) = 1.20;</li>
+              <li>Qualifying referrals: 1 + (4 × 10%) = 1.40.</li>
+            </ul>
+          </li>
+          <li>Final Score = Base Points × ∏(1 + Freq × Engagement Multiplier) = 1,040 × (1.20 × 1.20 × 1.40) = 1,040 × 2.016 = <strong>2,096.64 points</strong>.</li>
         </ol>
         <p>This example is illustrative and is subject to verification of the user&rsquo;s transactions and activities.</p>
         <p><strong>7.3</strong> Eligible Users shall be ranked in descending order of their Final Scores, with the highest Final Score occupying the highest position on the Leaderboard.</p>
