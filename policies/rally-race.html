@@ -155,23 +155,30 @@
 
         <h2>7. Final Score and Leaderboard Ranking</h2>
         <p><strong>7.1</strong> The Final Score of each Eligible User shall be calculated by applying the total applicable Engagement Multipliers to the Base Points.</p>
-        <p><strong>Final Score = Base Points × (1 + Total Applicable Engagement Multipliers)</strong></p>
-        <p>The Engagement Multipliers shall be expressed as percentages in the calculation.</p>
+        <p><strong>Final Score = Base Points × (1 + ∑(Freq × Engagement Multiplier))</strong></p>
+        <p>Where &ldquo;Freq&rdquo; means the number of times the user has completed a qualifying activity during the Campaign Period, and &ldquo;Engagement Multiplier&rdquo; means the multiplier applicable to that activity under Clause 6.2. The Engagement Multipliers shall be expressed as percentages in the calculation.</p>
         <h3>7.2 Illustrative Example</h3>
         <p>Assume a user has:</p>
         <ul>
           <li>Eligible Bill Payment Volume: ₹40,000;</li>
           <li>Wallet payments/Rally Passes value: ₹10,00,000;</li>
-          <li>Two qualifying referrals: 20% in total;</li>
-          <li>DFA Initialization: 20%; and</li>
-          <li>Waitlist Financial Fitness: 20%.</li>
+          <li>DFA Initialization: 1 time (20%);</li>
+          <li>Class Upgrade Initialization: 1 time (20%); and</li>
+          <li>Qualifying referrals: 4 (10% each).</li>
         </ul>
         <p>The calculation shall be:</p>
         <ol type="a">
           <li>Eligible Volume = ₹40,000 + ₹10,00,000 = ₹10,40,000.</li>
           <li>Base Points = ₹10,40,000 ÷ ₹1,000 = 1,040 points.</li>
-          <li>Total applicable Engagement Multiplier = 20% + 20% + 20% = 60%.</li>
-          <li>Final Score = 1,040 × (1 + 0.60) = <strong>1,664 points</strong>.</li>
+          <li>∑(Freq × Engagement Multiplier):
+            <ul>
+              <li>DFA Initialization: 1 × 20% = 20%;</li>
+              <li>Class Upgrade Initialization: 1 × 20% = 20%;</li>
+              <li>Qualifying referrals: 4 × 10% = 40%;</li>
+              <li>Total = 20% + 20% + 40% = 80%.</li>
+            </ul>
+          </li>
+          <li>Final Score = 1,040 × (1 + 0.80) = 1,040 × 1.80 = <strong>1,872 points</strong>.</li>
         </ol>
         <p>This example is illustrative and is subject to verification of the user&rsquo;s transactions and activities.</p>
         <p><strong>7.3</strong> Eligible Users shall be ranked in descending order of their Final Scores, with the highest Final Score occupying the highest position on the Leaderboard.</p>
