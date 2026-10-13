@@ -81,6 +81,38 @@ body {
    control. The class is toggled by the inline boot script in <head>. */
 html.webview .back-link { display: none; }
 
+/* "beyound x Rally" co-brand, shown only when opened from the Rally app
+   (?app=rally). The class is toggled by the inline boot script in <head>.
+   margin-right:auto keeps it hugging the beyound mark while the header's
+   space-between still pushes the back-link to the far edge. */
+.cobrand {
+  display: none;
+  align-items: center;
+  gap: 10px;
+  margin-left: 12px;
+  margin-right: auto;
+}
+html.app-rally .cobrand { display: inline-flex; }
+
+.cobrand-x {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--ink);
+  opacity: 0.45;
+  line-height: 1;
+}
+
+.cobrand-logo {
+  height: 26px;
+  width: auto;
+  display: block;
+}
+
+@media (max-width: 420px) {
+  .cobrand { gap: 8px; margin-left: 8px; }
+  .cobrand-logo { height: 22px; }
+}
+
 main.policy {
   max-width: 760px;
   margin: 0 auto;

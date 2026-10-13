@@ -14,6 +14,29 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+    <script>
+      // Co-brand the header as "beyound x Rally" when the page is opened from
+      // the Rally app (?app=rally). Runs in <head> so the class is set before
+      // first paint. Also carries app/webView params onto in-section policy
+      // links so navigating from the index keeps the same header.
+      try {
+        var policyParams = new URLSearchParams(location.search);
+        if (policyParams.get("app") === "rally") {
+          document.documentElement.classList.add("app-rally");
+        }
+        var carried = ["app", "webView"].filter(function (k) { return policyParams.has(k); });
+        if (carried.length) {
+          document.addEventListener("DOMContentLoaded", function () {
+            document.querySelectorAll('a[href$=".html"]').forEach(function (a) {
+              if (/^[a-z]+:|^\/\//i.test(a.getAttribute("href"))) return;
+              var url = new URL(a.href);
+              carried.forEach(function (k) { url.searchParams.set(k, policyParams.get(k)); });
+              a.href = url.toString();
+            });
+          });
+        }
+      } catch (e) {}
+    </script>
   <script>
     // Hide chrome (e.g. "All policies" back-link) when embedded in a
     // native webview via ?webView=true. Runs synchronously in <head> so
@@ -31,6 +54,10 @@
       <span class="brand-mark">b</span>
       <span class="brand-name">beyound</span>
     </a>
+      <span class="cobrand" aria-label="in partnership with Rally">
+        <span class="cobrand-x" aria-hidden="true">&times;</span>
+        <img class="cobrand-logo" src="assets/rally-logo.png" alt="Rally" width="454" height="160" />
+      </span>
     <a class="back-link" href="https://beyound.in/">← Back to website</a>
   </header>
   <main class="policy">

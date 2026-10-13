@@ -15,6 +15,29 @@
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
     <script>
+      // Co-brand the header as "beyound x Rally" when the page is opened from
+      // the Rally app (?app=rally). Runs in <head> so the class is set before
+      // first paint. Also carries app/webView params onto in-section policy
+      // links so navigating from the index keeps the same header.
+      try {
+        var policyParams = new URLSearchParams(location.search);
+        if (policyParams.get("app") === "rally") {
+          document.documentElement.classList.add("app-rally");
+        }
+        var carried = ["app", "webView"].filter(function (k) { return policyParams.has(k); });
+        if (carried.length) {
+          document.addEventListener("DOMContentLoaded", function () {
+            document.querySelectorAll('a[href$=".html"]').forEach(function (a) {
+              if (/^[a-z]+:|^\/\//i.test(a.getAttribute("href"))) return;
+              var url = new URL(a.href);
+              carried.forEach(function (k) { url.searchParams.set(k, policyParams.get(k)); });
+              a.href = url.toString();
+            });
+          });
+        }
+      } catch (e) {}
+    </script>
+    <script>
       try {
         if (new URLSearchParams(location.search).get("webView") === "true") {
           document.documentElement.classList.add("webview");
@@ -28,6 +51,10 @@
         <span class="brand-mark">b</span>
         <span class="brand-name">beyound</span>
       </a>
+      <span class="cobrand" aria-label="in partnership with Rally">
+        <span class="cobrand-x" aria-hidden="true">&times;</span>
+        <img class="cobrand-logo" src="assets/rally-logo.png" alt="Rally" width="454" height="160" />
+      </span>
       <a class="back-link" href="./">All policies</a>
     </header>
     <main class="policy">
@@ -54,6 +81,7 @@
         <p><strong>2.10 &ldquo;Leaderboard&rdquo;</strong> means the ranking of Eligible Users maintained and displayed through the Rally App based on their Final Scores.</p>
         <p><strong>2.11 &ldquo;Reward&rdquo;</strong> means the bike awarded to each Winner under the Campaign.</p>
         <p><strong>2.12 &ldquo;Winner&rdquo;</strong> means an Eligible User who secures one of the three highest positions on the final verified Leaderboard, subject to successful verification and compliance with these T&amp;Cs.</p>
+        <p><strong>2.13 &ldquo;DFA&rdquo;</strong> means Debt Free Age. DFA is a feature on the Rally App that provides the user with an indicative estimate of the age at which the user may become free of outstanding debt, based on the information provided by or available in respect of the user. The DFA estimate is illustrative only and does not constitute financial advice or a guarantee of any outcome.</p>
 
         <h2>3. Eligibility</h2>
         <p><strong>3.1</strong> The Campaign is open to Eligible Users who participate during the Campaign Period.</p>
