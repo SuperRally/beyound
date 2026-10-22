@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Rally Referral — Terms and Conditions — beyound</title>
+    <meta name="description" content="Terms and Conditions governing the Rally Referral Program — RallyCash rewards for referrers and referred users, tiers, eligibility and restrictions." />
+    <meta name="theme-color" content="#059669" />
+    <meta property="og:title" content="Rally Referral — Terms and Conditions — beyound" />
+    <meta property="og:description" content="Terms and Conditions governing the Rally Referral Program — RallyCash rewards for referrers and referred users, tiers, eligibility and restrictions." />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%23059669'/><text x='50' y='68' text-anchor='middle' font-size='52' font-weight='700' font-family='system-ui' fill='white'>b</text></svg>" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css?v=20261013" />
+    <script>
+      // Co-brand the header as "beyound x Rally" when the page is opened from
+      // the Rally app (?app=rally). Runs in <head> so the class is set before
+      // first paint. Also carries app/webView params onto in-section policy
+      // links so navigating from the index keeps the same header.
+      try {
+        var policyParams = new URLSearchParams(location.search);
+        if (policyParams.get("app") === "rally") {
+          document.documentElement.classList.add("app-rally");
+        }
+        var carried = ["app", "webView"].filter(function (k) { return policyParams.has(k); });
+        if (carried.length) {
+          document.addEventListener("DOMContentLoaded", function () {
+            document.querySelectorAll('a[href$=".html"]').forEach(function (a) {
+              if (/^[a-z]+:|^\/\//i.test(a.getAttribute("href"))) return;
+              var url = new URL(a.href);
+              carried.forEach(function (k) { url.searchParams.set(k, policyParams.get(k)); });
+              a.href = url.toString();
+            });
+          });
+        }
+      } catch (e) {}
+    </script>
+    <script>
+      try {
+        if (new URLSearchParams(location.search).get("webView") === "true") {
+          document.documentElement.classList.add("webview");
+        }
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <header class="page-header">
+      <a class="brand-link" href="../">
+        <span class="brand-mark">b</span>
+        <span class="brand-name">beyound</span>
+      </a>
+      <span class="cobrand" aria-label="in partnership with Rally" hidden>
+        <span class="cobrand-x" aria-hidden="true">&times;</span>
+        <img class="cobrand-logo" src="assets/rally-logo.png" alt="Rally" width="74" height="26" />
+      </span>
+      <a class="back-link" href="./">All policies</a>
+    </header>
+    <main class="policy">
+      <p class="kicker">beyound · Platform</p>
+      <h1>Rally Referral — Terms and Conditions</h1>
+      <p class="updated">Last updated: 22 October 2026</p>
+      <article class="policy-body">
+        <h2>1. About the Referral Program</h2>
+        <p>The Rally Referral Program allows existing Rally users to invite friends to join Rally through a referral link. When a referred user completes a successful payment, both the referrer and the referred user can earn RallyCash based on the time taken to complete the payment.</p>
+
+        <h2>2. Definitions</h2>
+        <p><strong>Referral</strong>: An invitation shared by an existing Rally user with a potential new user through a referral link.</p>
+        <p><strong>Referrer</strong>: An existing Rally user who shares their referral link with another person.</p>
+        <p><strong>Referred User</strong>: A new user who joins Rally through a valid referral link and completes a successful payment. Existing Rally users are not eligible to be referred users.</p>
+        <p><strong>RallyCash</strong>: Reward credits that can be used to offset platform fees on the Rally app. RallyCash is not actual cash and cannot be withdrawn as money.</p>
+
+        <h2>3. Referral Rewards</h2>
+        <p>The reward depends on how quickly the referred user completes a successful payment after clicking the referral link.</p>
+        <table>
+          <thead><tr><th>Time to successful payment</th><th>Reward (each user)</th></tr></thead>
+          <tbody>
+            <tr><td>Within 3 minutes</td><td>1,000 RallyCash</td></tr>
+            <tr><td>More than 3 minutes and up to 10 minutes</td><td>500 RallyCash</td></tr>
+            <tr><td>More than 10 minutes and thereafter</td><td>200 RallyCash</td></tr>
+          </tbody>
+        </table>
+        <p>The timer starts when the referred user clicks the referral link. Only one reward tier applies to each successful referral.</p>
+
+        <h2>4. Referral Eligibility</h2>
+        <p>The referrer must share a valid referral link, and the referred user must use the link and complete a successful payment on Rally. Sharing a referral link alone does not qualify for rewards.</p>
+        <p>Each referral must relate to a genuine new user. Existing Rally users cannot qualify as referred users.</p>
+
+        <h2>5. Reward Crediting</h2>
+        <p>After the referred user&#39;s payment is successfully completed and verified, the applicable RallyCash will be credited to both users&#39; Rally accounts.</p>
+        <p>Failed, cancelled, or reversed payments do not qualify for rewards.</p>
+
+        <h2>6. Use of RallyCash</h2>
+        <p>RallyCash can be used to offset eligible platform fees within the Rally app. It cannot be withdrawn or transferred to a bank account as cash. Its use is subject to the redemption options available within the app.</p>
+
+        <h2>7. Referral Restrictions</h2>
+        <p>Self-referrals, duplicate referrals, fake accounts, or attempts to misuse the referral program are not eligible for rewards. RallyCash credited through ineligible or fraudulent referrals may be withheld or reversed.</p>
+
+        <h2>8. Changes to the Referral Program</h2>
+        <p>Rally may update, pause, or discontinue the referral program from time to time. Any applicable changes will be communicated through the Rally app.</p>
+
+        <h2>9. Contact Information</h2>
+        <p>For any queries or assistance regarding referrals or RallyCash rewards, please contact our customer support team:</p>
+        <p><strong>Email ID</strong>: <a href="mailto:support@beyound.in">support@beyound.in</a></p>
+        <p><strong>Phone</strong>: <a href="tel:+919108961864">+91 9108961864</a></p>
+        <p>By participating in the referral program, you agree to the Terms &amp; Conditions outlined above.</p>
+      </article>
+    </main>
+    <footer class="page-footer">
+      <p>&copy; 2026 BeyoundExtra Tech Private Limited. All rights reserved.</p>
+      <p class="address">Corporate Office: Wework Galaxy 43, Residency Rd, Shanthala Nagar, Ashok Nagar, Bengaluru, Karnataka - 560025</p>
+      <p class="address">Registered Address: Khasra No 1467-1468, Balwanta Industrial Area Mali Ki Dhani, Nasirabad, Ajmer Road, Balwanta- 305601, Rajasthan</p>
+      <p><a href="mailto:support@beyound.in">support@beyound.in</a></p>
+    </footer>
+  </body>
+</html>
